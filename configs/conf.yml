@@ -1,0 +1,14 @@
+logger:
+    level: "debug"
+
+db:
+    username: "postgres"
+    host: "localhost"
+    port: 5432
+    dbname: "people"
+    password: "88888888"
+    sslmode:  "disable"
+
+server:
+    port: ":8080"
+
