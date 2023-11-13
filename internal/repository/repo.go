@@ -33,13 +33,13 @@ func (d *DB) Get(name string) (models.User, error) {
 }
 
 func (d *DB) Delete(id int) error {
-	_, err := d.db.Exec("DELETE FROM users WHERE=$1", id)
+	_, err := d.db.Exec("DELETE FROM users WHERE id=$1", id)
 
 	return err
 
 }
 
 func (d *DB) Update(id int, user models.User) error {
-	_, err := d.db.Exec("UPDATE users SET name=$1,surname=$1, patronymic=$3 WHERE id = $4", user.Name, user.Surname, user.Patronymic, id)
+	_, err := d.db.Exec("UPDATE users SET name=$1,surname=$2, patronymic=$3 WHERE id = $4", user.Name, user.Surname, user.Patronymic, id)
 	return err
 }
